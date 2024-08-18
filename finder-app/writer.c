@@ -65,6 +65,8 @@ int main(int argc, char** argv) {
     // Close the file
     if (close(fd) == -1)
         perror("close");
+
+    closelog();
     
     return 0;
 }
