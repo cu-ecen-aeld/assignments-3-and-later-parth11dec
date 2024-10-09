@@ -104,13 +104,13 @@ make clean && make
 # TODO: Copy the finder related scripts and executables to the /home directory
 # on the target rootfs
 cd ${OUTDIR}/rootfs/home
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/writer .
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/finder.sh .
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/finder-test.sh .
+cp -r $FINDER_APP_DIR/writer .
+cp -r $FINDER_APP_DIR/finder.sh .
+cp -r $FINDER_APP_DIR/finder-test.sh .
 mkdir conf
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/conf/username.txt conf/.
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/conf/assignment.txt conf/.
-cp -r ~/linux-system-programming/assignment-2-parth11dec/finder-app/autorun-qemu.sh .
+cp -r $FINDER_APP_DIR/conf/username.txt conf/.
+cp -r $FINDER_APP_DIR/conf/assignment.txt conf/.
+cp -r $FINDER_APP_DIR/autorun-qemu.sh .
 
 # TODO: Chown the root directory
 #This step is taken care of by passing --owner root:root when creating a cpio
