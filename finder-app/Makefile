@@ -1,3 +1,4 @@
+CROSS_COMPILE=aarch64-none-linux-gnu-
 CC      = gcc
 CFLAGS  = -g -Wall
 RM      = rm -f
