@@ -98,7 +98,7 @@ cd ${OUTDIR}/rootfs
 #sudo mknod -m 600 dev/console c 5 1
 
 # TODO: Clean and build the writer utility
-cd ~/linux-system-programming/assignment-2-parth11dec/finder-app/
+cd "$FINDER_APP_DIR"
 make clean && make
 
 # TODO: Copy the finder related scripts and executables to the /home directory
