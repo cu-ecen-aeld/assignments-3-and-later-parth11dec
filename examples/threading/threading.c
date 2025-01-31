@@ -16,13 +16,12 @@ void* threadfunc(void* thread_param)
     //struct thread_data* thread_func_args = (struct thread_data *) thread_param;
 
     struct thread_data* thread_func_args = (struct thread_data *) thread_param;
+    thread_func_args->thread_complete_success = false;
 
-    //sleep(thread_func_args->wait_to_obtain_ms);
-    while(thread_func_args->wait_to_obtain_ms--);
+    usleep(1000 * thread_func_args->wait_to_obtain_ms);
     pthread_mutex_lock(thread_func_args->mutex);
 
-    //sleep(thread_func_args->wait_to_release_ms);
-    while(thread_func_args->wait_to_release_ms--);
+    usleep(1000 * thread_func_args->wait_to_release_ms);
     pthread_mutex_unlock(thread_func_args->mutex);
 
     thread_func_args->thread_complete_success = true;
@@ -50,7 +49,6 @@ bool start_thread_obtaining_mutex(pthread_t *thread, pthread_mutex_t *mutex, int
     }
 
     // setup mutex and wait arguments
-//    *mutex = PTHREAD_MUTEX_INITIALIZER;
     thread_param->wait_to_obtain_ms = wait_to_obtain_ms;
     thread_param->wait_to_release_ms = wait_to_release_ms;
     thread_param->mutex = mutex;
